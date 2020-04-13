@@ -1,0 +1,11 @@
+# flashing firmware : TODO
+
+
+
+#### flashing lua script
+
+# install flashing tool
+yay -S luatool-git
+
+# flash
+sudo  -p /dev/ttyUSB0 luatool.py  --src blink.lua --dest init.lua --verbose --baud 115200
