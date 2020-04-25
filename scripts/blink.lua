@@ -20,5 +20,6 @@ end
 gpio.mode(pin, gpio.OUTPUT)
 gpio.write(pin, value)
 
-tmr.alarm(0, duration, 1, blink)
-
+local mytimer = tmr.create()
+mytimer:register(1000, tmr.ALARM_AUTO, blink)
+mytimer:start()

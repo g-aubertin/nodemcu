@@ -1,5 +1,8 @@
-# flashing firmware : TODO
+# flashing firmware
 
+$ rebuild : https://nodemcu-build.com/
+
+$ sudo esptool.py --port /dev/ttyUSB0 write_flash -fm qio 0x00000 ~/Downloads/nodemcu-master-8-modules-2020-04-19-17-22-43-integer.bin
 
 
 #### flashing lua script
