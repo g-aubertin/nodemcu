@@ -1,4 +1,3 @@
-
 function wifi_stat ()
   if wifi.sta.getip() == nil then
     print("IP unavaiable, Waiting...")
@@ -29,6 +28,8 @@ srv=net.createServer(net.TCP)
 srv:listen(80,function(conn)
    conn:on("receive",function(conn,payload)
       print(payload)
-      conn:send("<h1>This is a simple webserver</h1>")
+      status, temp, humi, temp_dec, humi_dec = dht.read(2)
+      conn:send(string.format("<h1> temperature : %d, humidity : %d</h1>", math.floor(temp), math.floor(humi)))
+
    end)
 end)
